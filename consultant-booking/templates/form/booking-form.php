@@ -57,11 +57,16 @@ if (!$consultant_id || get_post_type($consultant_id) !== 'cb_consultant') {
   <textarea name="notes" rows="3" placeholder="Please provide your academic result, IELTS score, desired country"></textarea>
 
   <label for="payment_method">Payment Method</label>
-  <select name="payment_method" required>
+  <select id="payment_method" name="payment_method" required>
     <option value="">Select a payment method</option>
     <option value="cash">Cash on visit</option>
     <option value="online">Online Payment</option>
   </select>
+
+  <div class="card-info">
+
+  </div>
+
   <br>
   <button type="submit" name="submit_booking">Book Appointment</button>
   </form>
