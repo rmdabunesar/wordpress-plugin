@@ -380,8 +380,7 @@ section.consultants-list-area {
 }
 
 .consultant-left {
-    flex: 1 1 300px;
-    max-width: 300px;
+    flex: 1 1 400px;
     text-align: center;
 }
 
@@ -439,7 +438,7 @@ section.consultants-list-area {
 }
 
 .consultant-right {
-    flex: 1 1 600px;
+    flex: 1 1 500px;
 }
 
 .consultant-right h2 {
