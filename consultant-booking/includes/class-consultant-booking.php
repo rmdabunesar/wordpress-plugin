@@ -32,8 +32,8 @@ class Consultant_Booking {
         $this->load_controllers();
 
         // Enqueue scripts and styles.
-        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_public_assets' ] );
-        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ]);
+        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_public_assets' ], 100 );
+        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ], 100);
 
         // Register widgets and sidebars.
         add_action( 'widgets_init', [ $this, 'register_search_widget' ] );

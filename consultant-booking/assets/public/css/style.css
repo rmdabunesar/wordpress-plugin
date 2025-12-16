@@ -7,12 +7,13 @@ section.consultants-list-area {
 .list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
 }
 
 .list-item {
     flex: 0 0 calc(33% - 20px);
     max-width: calc(33% - 20px);
+    margin-top: 20px;
     padding-top: 75px;
     box-sizing: border-box;
 }

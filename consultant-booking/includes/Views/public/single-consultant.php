@@ -1,18 +1,18 @@
 <?php
-/**
- * Single Consultant Template
- *
- * This template displays the details of a single consultant.
- *
- * @package Ahn\ConsultantBooking\Views
- */
+    /**
+     * Single Consultant Template
+     *
+     * This template displays the details of a single consultant.
+     *
+     * @package Ahn\ConsultantBooking\Views
+     */
 
-defined('ABSPATH') || exit;
+    defined('ABSPATH') || exit;
 
-get_header();
+    get_header();
 
-$booking_page_id = get_option('_cb_booking_page_id');
-$booking_page_slug = get_post($booking_page_id) ? get_post($booking_page_id)->post_name : '';
+    $booking_page_id   = get_option('_cb_booking_page_id');
+    $booking_page_slug = get_post($booking_page_id) ? get_post($booking_page_id)->post_name : '';
 ?>
 
 <div class="consultant-profile">
@@ -26,10 +26,10 @@ $booking_page_slug = get_post($booking_page_id) ? get_post($booking_page_id)->po
                 $consultant_socials = get_post_meta(get_the_ID(), '_consultant_socials', true);
             ?>
             <ul>
-                <?php foreach($consultant_socials as $social): ?>
+                <?php foreach ($consultant_socials as $social): ?>
                 <li>
                     <a href="<?php echo esc_url($social['url']); ?>">
-                        <i class="fa-brands <?php echo esc_attr($social['platform']); ?>"></i>
+                        <i class="fa-brands                                            <?php echo esc_attr($social['platform']); ?>"></i>
                     </a>
                 </li>
                 <?php endforeach; ?>
@@ -59,11 +59,11 @@ $booking_page_slug = get_post($booking_page_id) ? get_post($booking_page_id)->po
 
         <div class="price">
             💰 Consultation Fee: <strong>
-                <?php echo number_format((float)get_post_meta(get_the_ID(), '_consultant_price', true), 2); ?> BDT
+                <?php echo number_format((float) get_post_meta(get_the_ID(), '_consultant_fee', true), 2); ?> BDT
             </strong>
         </div>
 
-        <a href="<?php echo home_url( $booking_page_slug .'?consultant_id=' . get_the_ID() ); ?>" class="appointment-btn">
+        <a href="<?php echo home_url($booking_page_slug . '?consultant_id=' . get_the_ID()); ?>" class="appointment-btn">
             Make Appointment
         </a>
 

@@ -1,20 +1,20 @@
 <?php
-/**
- * Booking Form Template
- * 
- * This template is used to display the booking form for a consultant.
- */
-defined('ABSPATH') || exit;
+    /**
+     * Booking Form Template
+     *
+     * This template is used to display the booking form for a consultant.
+     */
+    defined('ABSPATH') || exit;
 
-if (!$consultant_id || get_post_type($consultant_id) !== 'cb_consultant') {
-  return '<div style="padding: 40px; font-size: 20px; color: red;">Invalid consultant selected.</div>';
-}
+    if (! $consultant_id || get_post_type($consultant_id) !== 'cb_consultant') {
+        return '<div style="padding: 40px; font-size: 20px; color: red;">Invalid consultant selected.</div>';
+    }
 ?>
 
 <div class="appointment-form">
   <div class="consultant-info group-row">
     <div class="consultant-image">
-    <?php if($consultant_image): ?>
+    <?php if ($consultant_image): ?>
     <img src="<?php echo esc_url($consultant_image); ?>" alt="<?php echo esc_attr($consultant_name); ?>">
     <?php endif; ?>
     </div>
@@ -22,13 +22,14 @@ if (!$consultant_id || get_post_type($consultant_id) !== 'cb_consultant') {
       <h2><?php echo esc_html($consultant_name); ?></h2>
       <p class="designation"><?php echo esc_html($consultant_designation); ?></p>
         <span>Consult Fee:</span>
-        <span class="price">৳<?php echo esc_html(number_format($consultant_price, 2)); ?></span>
+        <span class="price">৳<?php echo esc_html(number_format($consultant_fee, 2)); ?></span>
     </div>
   </div>
 
-  <!-- <?php do_action('cb_before_form'); ?> -->
+  <!--       <?php do_action('cb_before_form'); ?> -->
   <form method="post">
   <input type="hidden" name="consultant_id" value="<?php echo esc_attr($consultant_id); ?>">
+  <input type="hidden" name="amount" value="<?php echo esc_attr($consultant_fee); ?>">
 
   <div class="group-row">
     <div class="column">
@@ -48,7 +49,7 @@ if (!$consultant_id || get_post_type($consultant_id) !== 'cb_consultant') {
     </div>
     <div class="column">
       <label for="appointment_datetime">Preferred Date & Time</label>
-      <input type="datetime-local" name="appointment_datetime" required>  
+      <input type="datetime-local" name="appointment_datetime" required>
     </div>
   </div>
 
@@ -70,6 +71,6 @@ if (!$consultant_id || get_post_type($consultant_id) !== 'cb_consultant') {
   <br>
   <button type="submit" name="submit_booking">Book Appointment</button>
   </form>
-  <!-- <?php do_action('cb_after_form'); ?> -->
+  <!--       <?php do_action('cb_after_form'); ?> -->
 
 </div>

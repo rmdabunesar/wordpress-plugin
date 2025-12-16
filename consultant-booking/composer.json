@@ -14,5 +14,7 @@
             "email": "info@ahnsolution.com"
         }
     ],
-    "require": {}
+    "require": {
+        "dompdf/dompdf": "^3.1"
+    }
 }
